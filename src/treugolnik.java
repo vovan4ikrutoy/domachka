@@ -17,13 +17,17 @@ public class treugolnik {
         double c = Math.sqrt(Math.pow(x3 - x1,2) + Math.pow(y3 - y1,2));
         double p = (a + b + c) * 0.5;
         double S = Math.sqrt(p * (p - a) * (p - b) * (p - c));
-        System.out.println("Длинна первой стороны - ");
-        System.out.print(a);
-        System.out.println("Длинна второй стороны - ");
-        System.out.print(b);
-        System.out.println("Длинна третей стороны - ");
-        System.out.print(c);
-        System.out.println("Площадь равна - ");
-        System.out.print(S);
+        System.out.println();
+        System.out.print("Длинна первой стороны - ");
+        System.out.printf("%.3f", a);
+        System.out.println();
+        System.out.print("Длинна второй стороны - ");
+        System.out.printf("%.3f", b);
+        System.out.println();
+        System.out.print("Длинна третей стороны - ");
+        System.out.printf("%.3f", c);
+        System.out.println();
+        System.out.print("Площадь равна - ");
+        System.out.printf("%.3f", S);
     }
 }
