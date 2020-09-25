@@ -4,14 +4,14 @@ public class treugolnik {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         System.out.println("Укажите координаты точки A");
-        double x1 = sc.nextInt();
-        double y1 = sc.nextInt();
+        double x1 = sc.nextDouble();
+        double y1 = sc.nextDouble();
         System.out.println("Укажите координаты точки B");
-        double x2 = sc.nextInt();
-        double y2 = sc.nextInt();
+        double x2 = sc.nextDouble();
+        double y2 = sc.nextDouble();
         System.out.println("Укажите координаты точки C");
-        double x3 = sc.nextInt();
-        double y3 = sc.nextInt();
+        double x3 = sc.nextDouble();
+        double y3 = sc.nextDouble();
         double a = Math.sqrt(Math.pow(x1 - x2,2) + Math.pow(y1 - y2,2));
         System.out.println("Результаты:");
         System.out.print("Длина стороны ab ");
