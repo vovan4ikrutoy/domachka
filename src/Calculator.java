@@ -41,8 +41,10 @@ public class Calculator {
             System.out.print("7 sin ");
             System.out.print("8 cos ");
             System.out.println("9 tg ");
-            System.out.println("10 cot");
-            System.out.println("11 Завершить");
+            System.out.print("10 ctg ");
+            System.out.print("11 π ");
+            System.out.println("12 e ");
+            System.out.println("13 Завершить ");
             int dey = sc.nextInt();
             double result;
             switch (dey) {
@@ -133,9 +135,19 @@ public class Calculator {
                         System.out.println("Результат:" + result);
                     }
                     break;
+                //c
+                case 11:
+                    result = 3.1415926535;
+                    System.out.println("π примерно равно:" + result);
+                    break;
+                //e
+                case 12:
+                    result = 2.7182818284;
+                    System.out.println("e примерно равно:" + result);
+                    break;
 
                 //выход
-                case 11:
+                case 13:
                     System.out.println("Выход...");
                     exit = 1;
                     break;
@@ -147,20 +159,10 @@ public class Calculator {
                     break;
 
             }
-            if (exit == 0) {
-                System.out.println(" ");
-                System.out.println("Продолжить?");
-                System.out.println("1 - Да");
-                System.out.println("2 - Нет");
-                num1 = sc.nextInt();
-                if (num1 == 2) {
-                    System.out.println("Выход...");
-                    break;
-                }
-                System.out.println(" ");
-            } else {
+            if (exit == 1) {
                 break;
             }
+            System.out.println(" ");
         }
     }
 }
