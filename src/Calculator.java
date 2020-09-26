@@ -1,35 +1,36 @@
 import java.util.Scanner;
 
 public class Calculator {
-    public static double number1()
-    {
+    public static double number1() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Укажите первое число:");
         return sc.nextDouble();
     }
-    public static double number2()
-    {
+
+    public static double number2() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Укажите второе число:");
         return sc.nextDouble();
     }
-    public static double number()
-    {
+
+    public static double number() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Укажите число:");
         return sc.nextDouble();
     }
-    public static double angle()
-    {
+
+    public static double angle() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Укажите угол:");
         return sc.nextDouble();
     }
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         double num1;
         double num2;
+        int exit = 0;
         Scanner sc = new Scanner(System.in);
-        while(true) {
+        while (true) {
             System.out.println("Укажите действие:");
             System.out.print("1 + ");
             System.out.print("2 - ");
@@ -43,73 +44,112 @@ public class Calculator {
             System.out.println("10 Завершить");
             int dey = sc.nextInt();
             double result;
-            if (dey == 1) {
-                num1 = number1();
-                num2 = number2();
-                result = num1 + num2;
-                System.out.println("Результат:" + result);
-            } else if (dey == 2) {
-                num1 = number1();
-                num2 = number2();
-                result = num1 - num2;
-                System.out.println("Результат:" + result);
-            } else if (dey == 3) {
-                num1 = number1();
-                num2 = number2();
-                result = num1 * num2;
-                System.out.println("Результат:" + result);
-            } else if (dey == 4) {
-                num1 = number1();
-                num2 = number2();
-                result = num1 / num2;
-                System.out.println("Результат:" + result);
-            } else if (dey == 5) {
-                num1 = number();
-                result = Math.sqrt(num1);
-                System.out.println("Результат:" + result);
-            } else if (dey == 6) {
-                num1 = number();
-                System.out.print("Укажите степень:");
-                int step = sc.nextInt();
-                result = Math.pow(num1, step);
-                System.out.println("Результат:" + result);
-            } else if (dey == 7) {
-                num1 = angle();
-                if (num1 < 360 && num1 > 0) {
-                    num1 = Math.toRadians(num1);
-                    result = Math.sin(num1);
+            switch (dey) {
+
+                //сложение
+                case 1:
+                    num1 = number1();
+                    num2 = number2();
+                    result = num1 + num2;
                     System.out.println("Результат:" + result);
-                }
-            } else if (dey == 8) {
-                num1 = angle();
-                if (num1 < 360 && num1 > 0) {
-                    num1 = Math.toRadians(num1);
-                    result = Math.cos(num1);
+                    break;
+
+                //вычитание
+                case 2:
+                    num1 = number1();
+                    num2 = number2();
+                    result = num1 - num2;
                     System.out.println("Результат:" + result);
-                }
-            } else if (dey == 9) {
-                num1 = angle();
-                if (num1 < 360 && num1 > 0) {
-                    num1 = Math.toRadians(num1);
-                    result = Math.tan(num1);
+                    break;
+
+                //умножение
+                case 3:
+                    num1 = number1();
+                    num2 = number2();
+                    result = num1 * num2;
                     System.out.println("Результат:" + result);
+                    break;
+
+                //деление
+                case 4:
+                    num1 = number1();
+                    num2 = number2();
+                    result = num1 / num2;
+                    System.out.println("Результат:" + result);
+                    break;
+
+                //корень
+                case 5:
+                    num1 = number();
+                    result = Math.sqrt(num1);
+                    System.out.println("Результат:" + result);
+                    break;
+
+                //степень
+                case 6:
+                    num1 = number();
+                    System.out.print("Укажите степень:");
+                    int step = sc.nextInt();
+                    result = Math.pow(num1, step);
+                    System.out.println("Результат:" + result);
+                    break;
+
+                //синус
+                case 7:
+                    num1 = angle();
+                    if (num1 < 360 && num1 > 0) {
+                        num1 = Math.toRadians(num1);
+                        result = Math.sin(num1);
+                        System.out.println("Результат:" + result);
+                    }
+                    break;
+
+                //косинус
+                case 8:
+                    num1 = angle();
+                    if (num1 < 360 && num1 > 0) {
+                        num1 = Math.toRadians(num1);
+                        result = Math.cos(num1);
+                        System.out.println("Результат:" + result);
+                    }
+                    break;
+
+                //тангенс
+                case 9:
+                    num1 = angle();
+                    if (num1 < 360 && num1 > 0) {
+                        num1 = Math.toRadians(num1);
+                        result = Math.tan(num1);
+                        System.out.println("Результат:" + result);
+                    }
+                    break;
+
+                //выход
+                case 10:
+                    System.out.println("Выход...");
+                    exit = 1;
+                    break;
+
+                //ошибка
+                default:
+                    System.out.println("error#@000000000000rrt24542");
+                    System.out.println("w45694q37b85gc46&#^cbg)$&^");
+                    break;
+
+            }
+            if (exit == 0) {
+                System.out.println(" ");
+                System.out.println("Продолжить?");
+                System.out.println("1 - Да");
+                System.out.println("2 - Нет");
+                num1 = sc.nextInt();
+                if (num1 == 2) {
+                    break;
                 }
-            }  else if (dey == 10) {
-                System.out.println("Выход...");
-                break;
+                System.out.println(" ");
             } else {
-                System.out.println("error#@000000000000rrt24542");
-                System.out.println("w45694q37b85gc46&#^cbg)$&^");
-            }
-            System.out.println(" ");
-            System.out.println("Продолжить?");
-            System.out.println("1 - Да");
-            System.out.println("2 - Нет");
-            num1 = sc.nextInt();
-            if(num1 == 2){
                 break;
-            }
-            System.out.println(" ");
             }
         }
     }
+}
