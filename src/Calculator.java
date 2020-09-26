@@ -41,7 +41,8 @@ public class Calculator {
             System.out.print("7 sin ");
             System.out.print("8 cos ");
             System.out.println("9 tg ");
-            System.out.println("10 Завершить");
+            System.out.println("10 cot");
+            System.out.println("11 Завершить");
             int dey = sc.nextInt();
             double result;
             switch (dey) {
@@ -123,9 +124,18 @@ public class Calculator {
                         System.out.println("Результат:" + result);
                     }
                     break;
+                //котангенс
+                case 10:
+                    num1 = angle();
+                    if (num1 < 360 && num1 > 0) {
+                        num1 = Math.toRadians(num1);
+                        result = Math.cos(num1) / Math.sin(num1);
+                        System.out.println("Результат:" + result);
+                    }
+                    break;
 
                 //выход
-                case 10:
+                case 11:
                     System.out.println("Выход...");
                     exit = 1;
                     break;
@@ -144,6 +154,7 @@ public class Calculator {
                 System.out.println("2 - Нет");
                 num1 = sc.nextInt();
                 if (num1 == 2) {
+                    System.out.println("Выход...");
                     break;
                 }
                 System.out.println(" ");
