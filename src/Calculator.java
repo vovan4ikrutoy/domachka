@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Calculator {
+
     public static double number1() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Укажите первое число:");
@@ -32,102 +33,111 @@ public class Calculator {
         Scanner sc = new Scanner(System.in);
         while (true) {
             System.out.println("Укажите действие:");
-            System.out.print("1 + ");
-            System.out.print("2 - ");
-            System.out.println("3 * ");
-            System.out.print("4 / ");
-            System.out.print("5 √ ");
-            System.out.println("6 ^ ");
-            System.out.print("7 sin ");
-            System.out.print("8 cos ");
-            System.out.println("9 tg ");
-            System.out.print("10 ctg ");
-            System.out.print("11 π ");
-            System.out.println("12 e ");
-            System.out.println("13 Завершить ");
-            int dey = sc.nextInt();
+            System.out.print("+ ");
+            System.out.print("- ");
+            System.out.print("* ");
+            System.out.println("/ ");
+            System.out.print("Корень ");
+            System.out.println("Степень ");
+            System.out.print("sin ");
+            System.out.print("cos ");
+            System.out.print("tg ");
+            System.out.println("ctg ");
+            System.out.print("Пи ");
+            System.out.println("Е ");
+            System.out.println("Выход ");
+            String dey = sc.nextLine();
             double result;
             switch (dey) {
 
                 //сложение
-                case 1:
+                case "+":
                     num1 = number1();
                     num2 = number2();
                     result = num1 + num2;
+                    skip();
                     System.out.println("Результат:" + result);
                     break;
 
                 //вычитание
-                case 2:
+                case "-":
                     num1 = number1();
                     num2 = number2();
                     result = num1 - num2;
+                    skip();
                     System.out.println("Результат:" + result);
                     break;
 
                 //умножение
-                case 3:
+                case "*":
                     num1 = number1();
                     num2 = number2();
                     result = num1 * num2;
+                    skip();
                     System.out.println("Результат:" + result);
                     break;
 
                 //деление
-                case 4:
+                case "/":
                     num1 = number1();
                     num2 = number2();
                     result = num1 / num2;
+                    skip();
                     System.out.println("Результат:" + result);
                     break;
 
                 //корень
-                case 5:
+                case "Корень":
                     num1 = number();
                     result = Math.sqrt(num1);
+                    skip();
                     System.out.println("Результат:" + result);
                     break;
 
                 //степень
-                case 6:
+                case "Степень":
                     num1 = number();
                     System.out.print("Укажите степень:");
                     int step = sc.nextInt();
                     result = Math.pow(num1, step);
+                    skip();
                     System.out.println("Результат:" + result);
                     break;
 
                 //синус
-                case 7:
+                case "sin":
                     num1 = angle();
                     if (num1 < 360 && num1 > 0) {
                         num1 = Math.toRadians(num1);
                         result = Math.sin(num1);
+                        skip();
                         System.out.println("Результат:" + result);
                     }
                     break;
 
                 //косинус
-                case 8:
+                case "cos":
                     num1 = angle();
                     if (num1 < 360 && num1 > 0) {
                         num1 = Math.toRadians(num1);
                         result = Math.cos(num1);
+                        skip();
                         System.out.println("Результат:" + result);
                     }
                     break;
 
                 //тангенс
-                case 9:
+                case "tg":
                     num1 = angle();
                     if (num1 < 360 && num1 > 0) {
                         num1 = Math.toRadians(num1);
                         result = Math.tan(num1);
+                        skip();
                         System.out.println("Результат:" + result);
                     }
                     break;
                 //котангенс
-                case 10:
+                case "ctg":
                     num1 = angle();
                     if (num1 < 360 && num1 > 0) {
                         num1 = Math.toRadians(num1);
@@ -135,19 +145,21 @@ public class Calculator {
                         System.out.println("Результат:" + result);
                     }
                     break;
-                //c
-                case 11:
+                //пи
+                case "Пи":
                     result = 3.1415926535;
+                    skip();
                     System.out.println("π примерно равно:" + result);
                     break;
                 //e
-                case 12:
+                case "Е":
                     result = 2.7182818284;
+                    skip();
                     System.out.println("e примерно равно:" + result);
                     break;
 
                 //выход
-                case 13:
+                case "Выход":
                     System.out.println("Выход...");
                     exit = 1;
                     break;
@@ -164,5 +176,9 @@ public class Calculator {
             }
             System.out.println(" ");
         }
+    }
+
+    private static void skip() {
+        System.out.println(" ");
     }
 }
